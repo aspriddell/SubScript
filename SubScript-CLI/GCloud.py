@@ -1,7 +1,6 @@
 import os
 import json
-from tkinter import Tk
-from tkinter.filedialog import askopenfilename
+import GUI
 
 envVar = 'GOOGLE_APPLICATION_CREDENTIALS'
 
@@ -12,8 +11,7 @@ def IsCredFileSet():
 		return False
 
 def FindAndSetCred():
-	Tk().withdraw() # we don't want a full GUI, so keep the root window from appearing
-	filename = askopenfilename(title = "Select Google JSON",filetypes = [("Google Credential Files","*.json")]) # show an "Open" dialog box and return the path to the selected file
+	filename = GUI.LoadGCloud()
 	if filename != "":
 		os.environ[envVar] = filename
 

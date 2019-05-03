@@ -25,6 +25,12 @@
     <Compile Include="GCloud.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="GUI.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SSABridge.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="SubScript_CLI.py" />
   </ItemGroup>
   <ItemGroup>
