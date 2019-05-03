@@ -11,7 +11,7 @@
     <OutputPath>.</OutputPath>
     <Name>SubScript-CLI</Name>
     <RootNamespace>SubScript-CLI</RootNamespace>
-    <InterpreterId>MSBuild|SubScript-Env|$(MSBuildProjectFullPath)</InterpreterId>
+    <InterpreterId>MSBuild|SubScript-Env1|$(MSBuildProjectFullPath)</InterpreterId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -34,8 +34,8 @@
     <Compile Include="SubScript_CLI.py" />
   </ItemGroup>
   <ItemGroup>
-    <Interpreter Include="SubScript-Env\">
-      <Id>SubScript-Env</Id>
+    <Interpreter Include="..\..\..\..\PythonEnv\SubScript-Env\">
+      <Id>SubScript-Env1</Id>
       <Version>3.7</Version>
       <Description>SubScript-Env (Python 3.7 (64-bit))</Description>
       <InterpreterPath>Scripts\python.exe</InterpreterPath>
