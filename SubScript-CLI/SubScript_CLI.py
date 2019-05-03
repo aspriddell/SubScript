@@ -29,3 +29,4 @@ def LoadSubs():
 	SSABridge.Load()
 
 LoadSubs()
+#Translate();
