@@ -1,5 +1,5 @@
 from tkinter import Tk
-from tkinter.filedialog import askopenfilename
+from tkinter.filedialog import *
 from termcolor import colored
 
 Tk().withdraw()
@@ -15,7 +15,7 @@ def Clean():
 
 def UpdateTranslation(progress):
 	Clean()
-	print(colored('Translating: ', 'orange') +colored(progress, 'green'))
+	print("Translating: "+colored(progress, 'green'))
 
 def SaveSubs():
-	return tkFileDialog.asksaveasfilename(defaultextension = ".ass", filetypes = [("ASS","*.ass"),("SSA","*.ssa")], title = "Select Output File")
+	return asksaveasfilename(defaultextension = ".ass", filetypes = [("ASS","*.ass"),("SSA","*.ssa")], title = "Select Output File")

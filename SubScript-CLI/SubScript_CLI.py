@@ -9,20 +9,19 @@ colorama.init()
 
 def LoadSubs():
 	GUI.Clean()
-	print("Select a file in the dialog that will appear")
+	print("Select a subtitle file you wish to translate")
 	file = GUI.LoadSubs();
 	if file != "":
 		subs = pysubs2.load(file, encoding="utf-8") #load subs file
 		#get the lang code
 		language = GCloud.GetLanguageCode(subs)
-		print("Language detected as {}".format(language))
 
 		#list events for % GUI updater
 		eventcount = len(subs.events)
 		currentevent = 0
-
+		GUI.Clean()
 		print(f"Loaded file with {eventcount} Events and a predicted language of {language}")
-		input("Press Enter to start the translation...")
+		input('Press Any key to select destination and start the translation...')
 		GUI.Clean()
 		print("Select Destination")
 		dest = GUI.SaveSubs()
@@ -38,7 +37,7 @@ def LoadSubs():
 				if not re.match(reg,str(editedlist[i])): #decide weather it's worth translating
 					tt.append(i)
 			a.text = (''.join(GCloud.TranslateSet(editedlist,tt,language,outlang))) #recompile the translated segments
-			GUI.UpdateTranslation(str(round(currentevent/eventcount*100,1))+"% | "+str(time.time()-starttime)+" Elapsed") #update UI
+			GUI.UpdateTranslation(str(round(currentevent/eventcount*100,1))+"% | "+str(round(time.time()-starttime),0)+" Seconds Elapsed") #update UI
 
 		subs.save(dest) #save file
 
