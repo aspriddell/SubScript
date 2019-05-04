@@ -24,6 +24,10 @@ def LoadSubs():
 		print(f"Loaded file with {eventcount} Events and a predicted language of {langauge}")
 		input("Press Enter to start the translation...")
 		GUI.Clean()
+		print("Select Destination")
+		dest = GUI.SaveSubs()
+		if dest == "":
+			return
 		starttime = time.time()
 		for a in subs.events:
 			currentevent += 1
@@ -36,7 +40,7 @@ def LoadSubs():
 			a.text = (''.join(GCloud.TranslateSet(editedlist,tt,language,outlang))) #recompile the translated segments
 			GUI.UpdateTranslation(str(round(currentevent/eventcount*100,1))+"% | "+str(time.time()-starttime)+" Elapsed") #update UI
 
-		subs.save("subs.ass") #save file
+		subs.save(dest) #save file
 
 def SetCreds():
 	GCloud.FindAndSetCred()

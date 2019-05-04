@@ -16,3 +16,6 @@ def Clean():
 def UpdateTranslation(progress):
 	Clean()
 	print(colored('Translating: ', 'orange') +colored(progress, 'green'))
+
+def SaveSubs():
+	return tkFileDialog.asksaveasfilename(defaultextension = ".ass", filetypes = [("ASS","*.ass"),("SSA","*.ssa")], title = "Select Output File")
