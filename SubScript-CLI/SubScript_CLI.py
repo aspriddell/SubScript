@@ -21,7 +21,7 @@ def LoadSubs():
 		eventcount = len(subs.events)
 		currentevent = 0
 
-		print(f"Loaded file with {eventcount} Events and a predicted language of {langauge}")
+		print(f"Loaded file with {eventcount} Events and a predicted language of {language}")
 		input("Press Enter to start the translation...")
 		GUI.Clean()
 		print("Select Destination")
