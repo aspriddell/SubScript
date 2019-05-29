@@ -1,0 +1,2 @@
+pysubs2==0.2.3
+google-cloud-translate==1.4.0
